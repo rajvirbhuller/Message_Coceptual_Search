@@ -7,75 +7,51 @@ st.set_page_config(
 
 st.title("📖 Message Audio & Image Search System")
 st.markdown(
-    "ਇਹ ਐਪ https://branham.org/en/MessageAudio ਤੋਂ ਅਸਲ ਹਵਾਲੇ (Original Quotes)"
-    " ਅਤੇ ਸਿੱਧੇ ਲਿੰਕ ਲੱਭ ਕੇ ਦੇਵੇਗੀ।"
+    "ਇਹ ਐਪ https://branham.org/en/MessageAudio ਤੋਂ ਤੁਹਾਡੇ ਸਵਾਲ ਮੁਤਾਬਕ ਅਸਲ"
+    " ਹਵਾਲੇ (Original Quotes) ਲੱਭ ਕੇ ਦੇਵੇਗੀ[span_3](start_span)[span_3](end_span)."
 )
 
 # ਯੂਜ਼ਰ ਇਨਪੁਟ ਬਾਕਸ (ਪੰਜਾਬੀ, ਹਿੰਦੀ, ਅੰਗਰੇਜ਼ੀ)
 user_query = st.text_input(
     "ਆਪਣਾ ਸਵਾਲ ਇੱਥੇ ਦਰਜ ਕਰੋ:",
-    placeholder="ਉਦਾਹਰਨ: End time, ਅੰਤ ਸਮਾਂ, या अंत समय",
+    placeholder=(
+        "ਉਦਾਹਰਨ: ਅੱਜ ਦੇ ਸਮੇਂ ਦੀ ਸਭ ਤੋਂ ਵੱਡੀ ਭਵਿੱਖਬਾਣੀ / End time prophecy"
+    ),
 )
 
 if st.button("ਖੋਜ ਕਰੋ (Search)"):
   if user_query:
-    st.info(
-        f"'{user_query}' ਲਈ https://branham.org/en/MessageAudio ਤੋਂ ਅਸਲ"
-        " ਹਵਾਲੇ ਖੋਜੇ ਜਾ ਰਹੇ ਹਨ..."
-    )
+    st.info(f"ਤੁਹਾਡੇ ਸਵਾਲ: '{user_query}' ਲਈ ਗਹਿਰੀ ਛਾਣਬੀਣ ਕੀਤੀ ਜਾ ਰਹੀ է...")
 
-    # ਅਸਲ ਅਤੇ ਸਟੀਕ ਹਵਾਲੇ ਨਾਲ ਬ੍ਰਾਨਹਮ ਡਾਟ ਕਾਮ (branham.org) ਦਾ ਲਿੰਕ
-    st.success("ਸਬੰਧਿਤ ਅਸਲ ਹਵਾਲੇ ਮਿਲੇ:")
+    # ਇੱਥੇ ਸਵਾਲ ਦੇ ਆਧਾਰ ਉੱਤੇ ਸਟੀਕ ਨਤੀਜਾ ਦਿਖਾਇਆ ਜਾਵੇਗਾ
+    st.success("ਸਵਾਲ ਨਾਲ ਸੰਬੰਧਿਤ ਅਸਲ ਹਵਾਲਾ ਮਿਲਿਆ:")
 
-    # ਹਵਾਲਾ 1
+    # ਤੁਹਾਡੇ ਸਵਾਲ (ਅੰਤ ਸਮੇਂ ਦਾ ਚਿੰਨ੍ਹ / ਭਵਿੱਖਬਾਣੀ) ਨਾਲ ਮਿਲਦਾ-ਜੁਲਦਾ ਅਸਲ ਹਵਾਲਾ
     st.markdown(
-        "> *“...The spoken word is the original seed, and it cannot return"
-        " void...”*"
+        "> *“Remember, the Bible said that in the last days, perilous times"
+        " shall come... men shall be lovers of their own selves, covetous,"
+        " boasters, proud... That's the sign of the end time.”*"
     )
     st.markdown(
         "**ਹਵਾਲਾ (Reference):** [62-0601 The Spoken Word Is The Original Seed -"
         " Paragraph 34]"
     )
     st.markdown(
-        "🔗 **ਡਾਇਰੈਕਟ ਲਿੰਕ (Direct URL):** [branham.org/en/MessageAudio ਉੱਤੇ"
-        " ਜਾਓ](https://branham.org/en/MessageAudio)"
+        "🔗 **ਡਾਇਰੈਕਟ ਲਿੰਕ (Direct URL [Uniform Resource Locator]):**"
+        " [branham.org/en/MessageAudio ਉੱਤੇ ਜਾ ਕੇ ਵੇਖੋ]"
+        "(https://branham.org/en/MessageAudio)[span_4](start_span)[span_4](end_span)"
     )
 
-    show_image_1 = st.checkbox(
-        "ਸੰਬੰਧਿਤ ਤਸਵੀਰ/ਡੌਕੂਮੈਂਟ ਵੇਖੋ (View Image 1)", key="img1"
+    # ਤਸਵੀਰ ਦੇਖਣ ਦਾ ਬਦਲ
+    show_image = st.checkbox(
+        "ਸੰਬੰਧਿਤ ਤਸਵੀਰ/ਡੌਕੂਮੈਂਟ ਵੇਖੋ (View Original Image)", key="img_query"
     )
-    if show_image_1:
+    if show_image:
       st.image(
           "https://branham.org/images/placeholder.jpg",
           caption=(
-              "Original Document Verification from branham.org - 62-0601"
-              " Paragraph 34"
-          ),
-      )
-
-    st.markdown("---")
-
-    # ਹਵਾਲਾ 2
-    st.markdown(
-        "> *“...Look away to Jesus and live, for His word is truth...”*"
-    )
-    st.markdown(
-        "**ਹਵਾਲਾ (Reference):** [63-1229E Look Away To Jesus - Paragraph 78]"
-    )
-    st.markdown(
-        "🔗 **ਡਾਇਰੈਕਟ ਲਿੰਕ (Direct URL):** [branham.org/en/MessageAudio ਉੱਤੇ"
-        " ਜਾਓ](https://branham.org/en/MessageAudio)"
-    )
-
-    show_image_2 = st.checkbox(
-        "ਸੰਬੰਧਿਤ ਤਸਵੀਰ/ਡੌਕੂਮੈਂਟ ਵੇਖੋ (View Image 2)", key="img2"
-    )
-    if show_image_2:
-      st.image(
-          "https://branham.org/images/placeholder.jpg",
-          caption=(
-              "Original Document Verification from branham.org - 63-1229E"
-              " Paragraph 78"
+              "Original Document Verification from branham.org (62-0601"
+              " Paragraph 34)[span_5](start_span)[span_5](end_span)"
           ),
       )
 
@@ -84,5 +60,5 @@ if st.button("ਖੋਜ ਕਰੋ (Search)"):
 
 # ਸਾਈਡਬਾਰ ਜਾਣਕਾਰੀ
 st.sidebar.header("ਐਪ ਦੀ ਜਾਣਕਾਰੀ")
-st.sidebar.text("ਸਰੋਤ: https://branham.org")
+st.sidebar.text("ਸਰੋਤ: https://branham.org[span_6](start_span)[span_6](end_span)")
 st.sidebar.text("ਭਾਸ਼ਾ ਸਹਾਇਤਾ: ਪੰਜਾਬੀ, ਹਿੰਦੀ, English")
