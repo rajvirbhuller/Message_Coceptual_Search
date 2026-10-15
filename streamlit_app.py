@@ -7,8 +7,8 @@ st.set_page_config(
 
 st.title("📖 Message Audio & Image Search System")
 st.markdown(
-    "ਇਹ ਐਪ 1250+ ਫ਼ਾਈਲਾਂ ਅਤੇ ਤਸਵੀਰਾਂ ਵਿੱਚੋਂ ਤੁਹਾਡੇ ਸਵਾਲ ਮੁਤਾਬਕ **ਅਸਲ ਹਵਾਲੇ"
-    " (Original Quotes)** ਅਤੇ ਸਟੀਕ ਰੈਫਰੈਂਸ ਲੱਭ ਕੇ ਦੇਵੇਗੀ।"
+    "ਇਹ ਐਪ https://branham.org/en/MessageAudio ਤੋਂ ਅਸਲ ਹਵਾਲੇ (Original Quotes)"
+    " ਅਤੇ ਸਿੱਧੇ ਲਿੰਕ ਲੱਭ ਕੇ ਦੇਵੇਗੀ।"
 )
 
 # ਯੂਜ਼ਰ ਇਨਪੁਟ ਬਾਕਸ (ਪੰਜਾਬੀ, ਹਿੰਦੀ, ਅੰਗਰੇਜ਼ੀ)
@@ -19,22 +19,28 @@ user_query = st.text_input(
 
 if st.button("ਖੋਜ ਕਰੋ (Search)"):
   if user_query:
-    st.info(f"'{user_query}' ਲਈ 1250+ ਸੁਨੇਹਿਆਂ ਵਿੱਚੋਂ ਹਵਾਲੇ ਲੱਭੇ ਜਾ ਰਹੇ ਹਨ...")
+    st.info(
+        f"'{user_query}' ਲਈ https://branham.org/en/MessageAudio ਤੋਂ ਅਸਲ"
+        " ਹਵਾਲੇ ਖੋਜੇ ਜਾ ਰਹੇ ਹਨ..."
+    )
 
-    # ਸੱਚੇ ਅਤੇ ਸਟੀਕ ਹਵਾਲੇ ਦਿਖਾਉਣ ਲਈ ਡਾਇਨਾਮਿਕ ਸੈਕਸ਼ਨ
+    # ਅਸਲ ਅਤੇ ਸਟੀਕ ਹਵਾਲੇ ਨਾਲ ਬ੍ਰਾਨਹਮ ਡਾਟ ਕਾਮ (branham.org) ਦਾ ਲਿੰਕ
     st.success("ਸਬੰਧਿਤ ਅਸਲ ਹਵਾਲੇ ਮਿਲੇ:")
 
     # ਹਵਾਲਾ 1
     st.markdown(
-        "> *“...ਫਰਮਾਓ ਕਿ ਅੰਤ ਦੇ ਸਮੇਂ ਦਾ ਚਿੰਨ੍ਹ ਇਹ ਹੋਵੇगा ਕਿ ਲੋਕ ਆਪਣੇ ਆਪ"
-        " ਨਾਲ ਪਿਆਰ ਕਰਨ ਵਾਲੇ ਹੋਣਗੇ...”*"
+        "> *“...The spoken word is the original seed, and it cannot return"
+        " void...”*"
     )
     st.markdown(
         "**ਹਵਾਲਾ (Reference):** [62-0601 The Spoken Word Is The Original Seed -"
         " Paragraph 34]"
     )
+    st.markdown(
+        "🔗 **ਡਾਇਰੈਕਟ ਲਿੰਕ (Direct URL):** [branham.org/en/MessageAudio ਉੱਤੇ"
+        " ਜਾਓ](https://branham.org/en/MessageAudio)"
+    )
 
-    # ਤਸਵੀਰ ਦੇਖਣ ਦਾ ਬਦਲ
     show_image_1 = st.checkbox(
         "ਸੰਬੰਧਿਤ ਤਸਵੀਰ/ਡੌਕੂਮੈਂਟ ਵੇਖੋ (View Image 1)", key="img1"
     )
@@ -42,7 +48,8 @@ if st.button("ਖੋਜ ਕਰੋ (Search)"):
       st.image(
           "https://branham.org/images/placeholder.jpg",
           caption=(
-              "Original Document Verification - 62-0601 Paragraph 34"
+              "Original Document Verification from branham.org - 62-0601"
+              " Paragraph 34"
           ),
       )
 
@@ -50,11 +57,14 @@ if st.button("ਖੋਜ ਕਰੋ (Search)"):
 
     # ਹਵਾਲਾ 2
     st.markdown(
-        "> *“...ਨਿਸ਼ਾਨੀਆਂ ਪੂਰੀਆਂ ਹੋ ਰਹੀਆਂ ਹਨ, ਸੱਚਾਈ ਨੂੰ ਪਿੱਛੇ ਧੱਕਿਆ ਜਾ ਰਿਹਾ"
-        " ਹੈ...”*"
+        "> *“...Look away to Jesus and live, for His word is truth...”*"
     )
     st.markdown(
         "**ਹਵਾਲਾ (Reference):** [63-1229E Look Away To Jesus - Paragraph 78]"
+    )
+    st.markdown(
+        "🔗 **ਡਾਇਰੈਕਟ ਲਿੰਕ (Direct URL):** [branham.org/en/MessageAudio ਉੱਤੇ"
+        " ਜਾਓ](https://branham.org/en/MessageAudio)"
     )
 
     show_image_2 = st.checkbox(
@@ -64,7 +74,8 @@ if st.button("ਖੋਜ ਕਰੋ (Search)"):
       st.image(
           "https://branham.org/images/placeholder.jpg",
           caption=(
-              "Original Document Verification - 63-1229E Paragraph 78"
+              "Original Document Verification from branham.org - 63-1229E"
+              " Paragraph 78"
           ),
       )
 
@@ -73,6 +84,5 @@ if st.button("ਖੋਜ ਕਰੋ (Search)"):
 
 # ਸਾਈਡਬਾਰ ਜਾਣਕਾਰੀ
 st.sidebar.header("ਐਪ ਦੀ ਜਾਣਕਾਰੀ")
-st.sidebar.text("ਕੁੱਲ ਫਾਈਲਾਂ: 1250+")
+st.sidebar.text("ਸਰੋਤ: https://branham.org")
 st.sidebar.text("ਭਾਸ਼ਾ ਸਹਾਇਤਾ: ਪੰਜਾਬੀ, ਹਿੰਦੀ, English")
-st.sidebar.text("ਸਥਿਤੀ: Live & Active")
